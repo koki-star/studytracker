@@ -1,14 +1,4 @@
-# ============================================================================
-# PRODUCTION-GRADE .GITIGNORE FOR DJANGO PROJECTS
-# ============================================================================
-# This file prevents sensitive, environment-specific, and generated files
-# from being committed to version control.
-#
-# SECURITY FIRST: Never commit secrets, credentials, or environment configs
-# ============================================================================
 
-# ============================================================================
-# CRITICAL SECURITY - NEVER COMMIT THESE
 # ============================================================================
 
 # Environment variables (contains SECRET_KEY, API keys, passwords)
@@ -265,34 +255,3 @@ db.sqlite3.backup
 
 # Internal documentation (organized in docs/private/)
 docs/private/
-
-# ============================================================================
-# SECURITY NOTES
-# ============================================================================
-# 
-# WHAT TO NEVER COMMIT:
-# - .env files (contain SECRET_KEY, database passwords, API keys)
-# - Database files (contain user data)
-# - Secret keys, certificates, or credentials
-# - Local configuration files
-# - IDE-specific settings (unless team-agreed)
-# - Compiled Python files (__pycache__, *.pyc)
-# - Virtual environments
-# - Log files
-# - Backup files
-#
-# WHAT TO COMMIT:
-# - .env.example (template without real values)
-# - requirements.txt (dependencies)
-# - Source code (.py files)
-# - Templates (.html files)
-# - Static assets (CSS, JS, images)
-# - Migrations (Django database schema changes)
-# - Documentation
-# - .gitignore itself
-#
-# VERIFICATION:
-# Run: git status
-# Check that no .env, *.sqlite3, or sensitive files appear
-#
-# ============================================================================
