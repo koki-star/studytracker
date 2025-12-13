@@ -1,0 +1,298 @@
+# ============================================================================
+# PRODUCTION-GRADE .GITIGNORE FOR DJANGO PROJECTS
+# ============================================================================
+# This file prevents sensitive, environment-specific, and generated files
+# from being committed to version control.
+#
+# SECURITY FIRST: Never commit secrets, credentials, or environment configs
+# ============================================================================
+
+# ============================================================================
+# CRITICAL SECURITY - NEVER COMMIT THESE
+# ============================================================================
+
+# Environment variables (contains SECRET_KEY, API keys, passwords)
+.env
+.env.local
+.env.*.local
+*.env
+
+# Database files (may contain user data and should not be in version control)
+*.sqlite3
+*.db
+db.sqlite3
+db.sqlite3-journal
+*.sqlite
+*.backup
+
+# Secret keys and certificates
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+*.pfx
+secrets/
+.secrets/
+
+# ============================================================================
+# PYTHON / DJANGO
+# ============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+*.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+static_root/
+collected_static/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath
+*.sage.py
+
+# ============================================================================
+# VIRTUAL ENVIRONMENTS
+# ============================================================================
+
+.venv
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+virtualenv/
+.virtualenv/
+
+# ============================================================================
+# IDE / EDITORS
+# ============================================================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ============================================================================
+# OPERATING SYSTEMS
+# ============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============================================================================
+# TESTING / COVERAGE
+# ============================================================================
+
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.cache/
+
+# ============================================================================
+# TYPE CHECKING / LINTING
+# ============================================================================
+
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# ============================================================================
+# DOCUMENTATION
+# ============================================================================
+
+docs/_build/
+.sphinx/
+site/
+
+# ============================================================================
+# JUPYTER NOTEBOOK
+# ============================================================================
+
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# ============================================================================
+# NODE / NPM (if using frontend tools)
+# ============================================================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn/
+.pnp.*
+
+# ============================================================================
+# DEPLOYMENT / CI/CD
+# ============================================================================
+
+# Docker
+.dockerignore
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Kubernetes
+*.kubeconfig
+
+# ============================================================================
+# LOGS AND TEMPORARY FILES
+# ============================================================================
+
+*.log
+logs/
+*.tmp
+*.temp
+tmp/
+temp/
+
+# ============================================================================
+# BACKUP FILES
+# ============================================================================
+
+*.bak
+*.backup
+*.old
+*.orig
+*~
+
+# ============================================================================
+# PROJECT-SPECIFIC (StudyTracker)
+# ============================================================================
+
+# Database backups
+db.sqlite3.backup
+*.db.backup
+
+# Migration backups (keep migrations in version control, but not backups)
+*/migrations/*.backup
+
+# Internal documentation (organized in docs/private/)
+docs/private/
+
+# ============================================================================
+# SECURITY NOTES
+# ============================================================================
+# 
+# WHAT TO NEVER COMMIT:
+# - .env files (contain SECRET_KEY, database passwords, API keys)
+# - Database files (contain user data)
+# - Secret keys, certificates, or credentials
+# - Local configuration files
+# - IDE-specific settings (unless team-agreed)
+# - Compiled Python files (__pycache__, *.pyc)
+# - Virtual environments
+# - Log files
+# - Backup files
+#
+# WHAT TO COMMIT:
+# - .env.example (template without real values)
+# - requirements.txt (dependencies)
+# - Source code (.py files)
+# - Templates (.html files)
+# - Static assets (CSS, JS, images)
+# - Migrations (Django database schema changes)
+# - Documentation
+# - .gitignore itself
+#
+# VERIFICATION:
+# Run: git status
+# Check that no .env, *.sqlite3, or sensitive files appear
+#
+# ============================================================================

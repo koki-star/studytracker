@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="fw-bold tracking-tight">Daily Progress</h1>
+    <a href="{% url 'progress_create' %}" class="btn btn-primary shadow-sm"><i class="bi bi-plus-lg me-1"></i> Log
+        Progress</a>
+</div>
+
+<div class="card border-0 shadow-sm rounded-3 overflow-hidden">
+    <div class="table-responsive">
+        <table class="table table-hover mb-0 align-middle">
+            <thead class="bg-light">
+                <tr>
+                    <th class="py-3 ps-4">Date</th>
+                    <th class="py-3">Language</th>
+                    <th class="py-3">Topic</th>
+                    <th class="py-3">Time</th>
+                    <th class="py-3">Confidence</th>
+                    <th class="py-3 text-end pe-4">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in progress_entries %}
+                <tr>
+                    <td class="ps-4 fw-medium">{{ entry.date|date:"M d, Y" }}</td>
+                    <td><span class="language-tag tag-{{ entry.language.name|slugify }}">{{ entry.language.name
+                            }}</span></td>
+                    <td>{{ entry.topic.name|default:"-" }}</td>
+                    <td>{{ entry.time_spent_minutes }} min</td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <span class="me-2">{{ entry.confidence_level }}/5</span>
+                            <div class="progress flex-grow-1" style="height: 4px; width: 60px;">
+                                <div class="progress-bar bg-{% if entry.confidence_level >= 4 %}success{% elif entry.confidence_level >= 3 %}info{% else %}warning{% endif %}"
+                                    role="progressbar" style="width: {% widthratio entry.confidence_level 5 100 %}%">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="text-end pe-4">
+                        <a href="{% url 'progress_update' entry.pk %}" class="btn btn-sm btn-outline-secondary me-1"><i
+                                class="bi bi-pencil"></i></a>
+                        <a href="{% url 'progress_delete' entry.pk %}" class="btn btn-sm btn-outline-danger"><i
+                                class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
+                {% if entry.what_i_learned %}
+                <tr class="bg-light bg-opacity-10">
+                    <td colspan="6" class="ps-4 pe-4 py-2 text-muted small border-bottom-0">
+                        <i class="bi bi-journal-text me-1"></i> {{ entry.what_i_learned }}
+                    </td>
+                </tr>
+                {% endif %}
+                {% empty %}
+                <tr>
+                    <td colspan="6" class="text-center py-5">
+                        <div class="text-muted mb-3"><i class="bi bi-journal-check display-1"></i></div>
+                        <h3>No progress logged yet</h3>
+                        <p class="text-secondary">Track your daily learning sessions here.</p>
+                        <a href="{% url 'progress_create' %}" class="btn btn-primary mt-2">Log First Session</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

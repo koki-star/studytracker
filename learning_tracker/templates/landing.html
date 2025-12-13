@@ -1,0 +1,518 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="hero-landing">
+    <div class="hero-blob-1"></div>
+    <div class="hero-blob-2"></div>
+
+    <div class="container">
+        <div class="row min-vh-100 align-items-center">
+            <div class="col-lg-6 text-center text-lg-start fade-up">
+                <h1 class="display-1 fw-black mb-4 gradient-text">
+                    Master Any<br>Skill Faster
+                </h1>
+                <p class="lead text-secondary mb-5" style="font-size: 1.25rem;">
+                    Track your learning journey, celebrate milestones, and stay motivated with StudyTracker.
+                    A modern web application built with Django and Bootstrap.
+                </p>
+                <div class="d-flex gap-3 justify-content-center justify-content-lg-start mb-5">
+                    <a href="{% url 'signup' %}"
+                        class="btn btn-primary btn-lg px-5 py-3 rounded-pill shadow-lg hover-lift">
+                        Try Demo <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                    <a href="#features" class="btn btn-outline-secondary btn-lg px-5 py-3 rounded-pill hover-lift">
+                        Learn More
+                    </a>
+                </div>
+                <div class="d-flex gap-4 justify-content-center justify-content-lg-start text-muted small">
+                    <div><i class="bi bi-check-circle-fill text-success me-2"></i>Full-Stack Project</div>
+                    <div><i class="bi bi-check-circle-fill text-success me-2"></i>Django + Bootstrap</div>
+                    <div><i class="bi bi-check-circle-fill text-success me-2"></i>Responsive Design</div>
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block fade-up" style="animation-delay: 0.2s;">
+                <div class="hero-visual">
+                    <div class="floating-card card-1">
+                        <i class="bi bi-lightning-charge-fill"></i>
+                        <span>Fast Progress</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="bi bi-graph-up-arrow"></i>
+                        <span>Track Growth</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="bi bi-trophy-fill"></i>
+                        <span>Achievements</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="stats-section py-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 col-6 mb-4">
+                <div class="stat-number gradient-text fw-bold">500+</div>
+                <div class="stat-label text-secondary">Study Sessions</div>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <div class="stat-number gradient-text fw-bold">15+</div>
+                <div class="stat-label text-secondary">Skills Tracked</div>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <div class="stat-number gradient-text fw-bold">100%</div>
+                <div class="stat-label text-secondary">Web-Based</div>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <div class="stat-number gradient-text fw-bold">Dark</div>
+                <div class="stat-label text-secondary">Mode Ready</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="features" class="features-section py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5 fade-up">
+            <div class="badge bg-primary-subtle text-primary rounded-pill mb-3 px-3 py-2">Features</div>
+            <h2 class="display-4 fw-bold mb-3">Everything You Need to Succeed</h2>
+            <p class="lead text-secondary">Powerful features designed to accelerate your learning journey</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3 fade-up">
+                <div class="feature-card h-100 p-4 rounded-4">
+                    <div class="feature-icon mb-3">
+                        <i class="bi bi-graph-up"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Track Progress</h4>
+                    <p class="text-secondary">Monitor your daily learning with detailed analytics and insights.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 fade-up" style="animation-delay: 0.1s;">
+                <div class="feature-card h-100 p-4 rounded-4">
+                    <div class="feature-icon mb-3">
+                        <i class="bi bi-bullseye"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Set Goals</h4>
+                    <p class="text-secondary">Define clear objectives and track your progress towards them.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 fade-up" style="animation-delay: 0.2s;">
+                <div class="feature-card h-100 p-4 rounded-4">
+                    <div class="feature-icon mb-3">
+                        <i class="bi bi-trophy"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Milestones</h4>
+                    <p class="text-secondary">Celebrate achievements and stay motivated throughout your journey.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 fade-up" style="animation-delay: 0.3s;">
+                <div class="feature-card h-100 p-4 rounded-4">
+                    <div class="feature-icon mb-3">
+                        <i class="bi bi-book"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Resources</h4>
+                    <p class="text-secondary">Organize and access all your learning materials in one place.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="how-it-works-section py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5 fade-up">
+            <div class="badge bg-primary-subtle text-primary rounded-pill mb-3 px-3 py-2">Simple Process</div>
+            <h2 class="display-4 fw-bold mb-3">How It Works</h2>
+            <p class="lead text-secondary">Get started in 3 simple steps</p>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-md-4 text-center fade-up">
+                <div class="step-number mb-4">1</div>
+                <div class="step-icon mb-3">
+                    <i class="bi bi-person-plus-fill"></i>
+                </div>
+                <h4 class="fw-bold mb-3">Sign Up</h4>
+                <p class="text-secondary">Create your account in seconds. Try the demo with sample data.</p>
+            </div>
+            <div class="col-md-4 text-center fade-up" style="animation-delay: 0.1s;">
+                <div class="step-number mb-4">2</div>
+                <div class="step-icon mb-3">
+                    <i class="bi bi-plus-circle-fill"></i>
+                </div>
+                <h4 class="fw-bold mb-3">Add Topics</h4>
+                <p class="text-secondary">Define what you want to learn and set your goals.</p>
+            </div>
+            <div class="col-md-4 text-center fade-up" style="animation-delay: 0.2s;">
+                <div class="step-number mb-4">3</div>
+                <div class="step-icon mb-3">
+                    <i class="bi bi-rocket-takeoff-fill"></i>
+                </div>
+                <h4 class="fw-bold mb-3">Start Learning</h4>
+                <p class="text-secondary">Track your progress and watch yourself improve every day.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="tech-section py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5 fade-up">
+            <div class="badge bg-primary-subtle text-primary rounded-pill mb-3 px-3 py-2">Built With</div>
+            <h2 class="display-4 fw-bold mb-3">Modern Technologies</h2>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-2 col-4 text-center fade-up">
+                <div class="tech-badge p-3">
+                    <i class="bi bi-filetype-py display-6 mb-2"></i>
+                    <div class="small fw-bold">Python</div>
+                </div>
+            </div>
+            <div class="col-md-2 col-4 text-center fade-up" style="animation-delay: 0.1s;">
+                <div class="tech-badge p-3">
+                    <i class="bi bi-server display-6 mb-2"></i>
+                    <div class="small fw-bold">Django</div>
+                </div>
+            </div>
+            <div class="col-md-2 col-4 text-center fade-up" style="animation-delay: 0.2s;">
+                <div class="tech-badge p-3">
+                    <i class="bi bi-bootstrap display-6 mb-2"></i>
+                    <div class="small fw-bold">Bootstrap</div>
+                </div>
+            </div>
+            <div class="col-md-2 col-4 text-center fade-up" style="animation-delay: 0.3s;">
+                <div class="tech-badge p-3">
+                    <i class="bi bi-filetype-sql display-6 mb-2"></i>
+                    <div class="small fw-bold">SQLite</div>
+                </div>
+            </div>
+            <div class="col-md-2 col-4 text-center fade-up" style="animation-delay: 0.4s;">
+                <div class="tech-badge p-3">
+                    <i class="bi bi-file-code display-6 mb-2"></i>
+                    <div class="small fw-bold">HTML/CSS</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="cta-section py-5">
+    <div class="container py-5">
+        <div class="cta-box rounded-5 p-5 text-center fade-up">
+            <h2 class="display-4 fw-bold mb-4 text-white">Ready to Explore?</h2>
+            <p class="lead mb-5 text-white-50">Try out the StudyTracker demo and see all features in action</p>
+            <a href="{% url 'signup' %}" class="btn btn-light btn-lg px-5 py-3 rounded-pill shadow-lg hover-lift">
+                Try Demo Now <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+            <div class="mt-4">
+                <small class="text-white-50">Already have an account? <a href="{% url 'login' %}"
+                        class="text-white fw-bold">Sign in</a></small>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    /* Hero Section */
+    .hero-landing {
+        position: relative;
+        overflow: hidden;
+        padding-top: 80px;
+    }
+
+    .hero-blob-1,
+    .hero-blob-2 {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        filter: blur(100px);
+        opacity: 0.6;
+        animation: float 20s ease-in-out infinite;
+    }
+
+    .hero-blob-1 {
+        background: linear-gradient(135deg, rgba(0, 188, 212, 0.3), rgba(168, 85, 247, 0.3));
+        top: -200px;
+        right: -200px;
+    }
+
+    .hero-blob-2 {
+        background: linear-gradient(135deg, rgba(251, 191, 36, 0.3), rgba(239, 68, 68, 0.3));
+        bottom: -200px;
+        left: -200px;
+        animation-delay: -10s;
+    }
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+
+        33% {
+            transform: translate(30px, -30px) rotate(120deg);
+        }
+
+        66% {
+            transform: translate(-20px, 20px) rotate(240deg);
+        }
+    }
+
+    .gradient-text {
+        background: linear-gradient(135deg, var(--primary-color), #8e84ff, #ff6b9d);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .fw-black {
+        font-weight: 900;
+    }
+
+    /* Hero Visual */
+    .hero-visual {
+        position: relative;
+        height: 500px;
+    }
+
+    .floating-card {
+        position: absolute;
+        background: var(--bg-surface);
+        border: 1px solid var(--border-color);
+        padding: 1.5rem 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        animation: floatCard 6s ease-in-out infinite;
+    }
+
+    .floating-card i {
+        font-size: 2rem;
+        color: var(--primary-color);
+    }
+
+    .floating-card span {
+        font-weight: 600;
+        color: var(--text-main);
+    }
+
+    .card-1 {
+        top: 50px;
+        left: 50px;
+    }
+
+    .card-2 {
+        top: 200px;
+        right: 50px;
+        animation-delay: -2s;
+    }
+
+    .card-3 {
+        bottom: 100px;
+        left: 100px;
+        animation-delay: -4s;
+    }
+
+    @keyframes floatCard {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    /* Stats Section */
+    .stats-section {
+        background: var(--bg-surface);
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .stat-number {
+        font-size: 3rem;
+        font-weight: 900;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    /* Features Section */
+    .features-section {
+        background: var(--bg-main);
+    }
+
+    .feature-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .feature-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary-color), #8e84ff);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        border-color: var(--primary-color);
+    }
+
+    .feature-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .feature-icon {
+        width: 64px;
+        height: 64px;
+        background: linear-gradient(135deg, rgba(0, 188, 212, 0.1), rgba(168, 85, 247, 0.1));
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .feature-icon i {
+        font-size: 2rem;
+        color: var(--primary-color);
+    }
+
+    /* Tech Section */
+    .tech-section {
+        background: var(--bg-surface);
+    }
+
+    .tech-badge {
+        background: var(--bg-main);
+        border: 1px solid var(--border-color);
+        border-radius: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .tech-badge:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary-color);
+    }
+
+    .tech-badge i {
+        color: var(--primary-color);
+    }
+
+    /* How It Works Section */
+    .how-it-works-section {
+        background: var(--bg-surface);
+    }
+
+    .step-number {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        background: linear-gradient(135deg, var(--primary-color), #8e84ff);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 900;
+    }
+
+    .step-icon {
+        font-size: 3rem;
+        color: var(--primary-color);
+    }
+
+    /* CTA Section */
+    .cta-section {
+        background: var(--bg-main);
+    }
+
+    .cta-box {
+        background: linear-gradient(135deg, var(--primary-color), #8e84ff, #ff6b9d);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cta-box::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        animation: pulse 15s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            transform: scale(1);
+            opacity: 0.5;
+        }
+
+        50% {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+    }
+
+    /* Hover Lift Effect */
+    .hover-lift {
+        transition: all 0.3s ease;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    /* Dark Mode Adjustments */
+    [data-bs-theme="dark"] .hero-blob-1,
+    [data-bs-theme="dark"] .hero-blob-2 {
+        opacity: 0.3;
+    }
+
+    [data-bs-theme="dark"] .feature-card {
+        background: rgba(255, 255, 255, 0.03);
+    }
+
+    [data-bs-theme="dark"] .floating-card {
+        background: rgba(255, 255, 255, 0.05);
+    }
+</style>
+{% endblock %}
