@@ -253,5 +253,5 @@ db.sqlite3.backup
 # Migration backups (keep migrations in version control, but not backups)
 */migrations/*.backup
 
-# Internal documentation (organized in docs/private/)
-docs/private/
+# Internal documentation - entire docs folder is private
+docs/
