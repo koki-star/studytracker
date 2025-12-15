@@ -9,15 +9,15 @@ A modern, full-stack web application for tracking your learning journey. Built w
 
 ## Features
 
-- ** Progress Tracking** - Log daily study sessions with time tracking and confidence levels
-- ** Goal Management** - Set and track learning objectives with deadlines
-- ** Milestones** - Celebrate achievements and mark important learning checkpoints
-- ** Resource Library** - Organize learning materials, articles, and links
-- ** Topic Organization** - Structure your learning by language/subject and subtopics
-- ** Dark Mode** - Beautiful dark and light themes with smooth transitions
-- ** Fully Responsive** - Optimized for desktop, tablet, and mobile devices
-- ** Data Visualization** - Interactive charts powered by Chart.js
-- ** User Authentication** - Secure login system with user-specific data isolation
+- **Progress Tracking** - Log daily study sessions with time tracking and confidence levels
+- **Goal Management** - Set and track learning objectives with deadlines
+- **Milestones** - Celebrate achievements and mark important learning checkpoints
+- **Resource Library** - Organize learning materials, articles, and links
+- **Topic Organization** - Structure your learning by language/subject and subtopics
+- **Dark Mode** - Beautiful dark and light themes with smooth transitions
+- **Fully Responsive** - Optimized for desktop, tablet, and mobile devices
+- **Data Visualization** - Interactive charts powered by Chart.js
+- **User Authentication** - Secure login system with user-specific data isolation
 
 ##  Live Demo
 
@@ -41,7 +41,7 @@ _Seamless dark theme throughout the app_
 - **Database:** SQLite (development), PostgreSQL (production-ready)
 - **Authentication:** Django's built-in auth system
 
-## ⚡ Quick Start
+## Quick Start
 
 ### Prerequisites
 
