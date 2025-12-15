@@ -1,4 +1,4 @@
-# 📚 StudyTracker
+# StudyTracker
 
 A modern, full-stack web application for tracking your learning journey. Built with Django and Bootstrap 5, featuring a beautiful UI with dark mode support, responsive design, and comprehensive learning management tools.
 
@@ -7,23 +7,23 @@ A modern, full-stack web application for tracking your learning journey. Built w
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-purple.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## ✨ Features
+## Features
 
-- **📊 Progress Tracking** - Log daily study sessions with time tracking and confidence levels
-- **🎯 Goal Management** - Set and track learning objectives with deadlines
-- **🏆 Milestones** - Celebrate achievements and mark important learning checkpoints
-- **📚 Resource Library** - Organize learning materials, articles, and links
-- **💡 Topic Organization** - Structure your learning by language/subject and subtopics
-- **🌗 Dark Mode** - Beautiful dark and light themes with smooth transitions
-- **📱 Fully Responsive** - Optimized for desktop, tablet, and mobile devices
-- **📈 Data Visualization** - Interactive charts powered by Chart.js
-- **🔒 User Authentication** - Secure login system with user-specific data isolation
+- ** Progress Tracking** - Log daily study sessions with time tracking and confidence levels
+- ** Goal Management** - Set and track learning objectives with deadlines
+- ** Milestones** - Celebrate achievements and mark important learning checkpoints
+- ** Resource Library** - Organize learning materials, articles, and links
+- ** Topic Organization** - Structure your learning by language/subject and subtopics
+- ** Dark Mode** - Beautiful dark and light themes with smooth transitions
+- ** Fully Responsive** - Optimized for desktop, tablet, and mobile devices
+- ** Data Visualization** - Interactive charts powered by Chart.js
+- ** User Authentication** - Secure login system with user-specific data isolation
 
-## 🚀 Live Demo
+##  Live Demo
 
 [View Live Demo](#) _(Coming soon)_
 
-## 📸 Screenshots
+##  Screenshots
 
 ### Dashboard
 _Beautiful overview with progress charts and quick stats_
@@ -31,7 +31,7 @@ _Beautiful overview with progress charts and quick stats_
 ### Dark Mode
 _Seamless dark theme throughout the app_
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Backend:** Python 3.12, Django 5.2.7
 - **Frontend:** HTML5, CSS3, JavaScript
@@ -90,7 +90,7 @@ _Seamless dark theme throughout the app_
 
 8. **Open your browser** and navigate to `http://127.0.0.1:8000`
 
-## 📖 Usage
+## Usage
 
 1. **Sign Up** - Create your account on the landing page
 2. **Add Languages** - Define what you're learning (e.g., "Python", "JavaScript")
@@ -100,7 +100,7 @@ _Seamless dark theme throughout the app_
 6. **Track Milestones** - Mark important achievements
 7. **Save Resources** - Keep all your learning materials organized
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 studytracker/
@@ -132,7 +132,7 @@ studytracker/
 └── README.md                 # This file
 ```
 
-## 🔧 Environment Variables
+## Environment Variables
 
 Create a `.env` file in the project root:
 
@@ -148,7 +148,7 @@ CSRF_TRUSTED_ORIGINS=http://localhost:8000,http://127.0.0.1:8000
 python3 -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
 ```
 
-## 🎯 Key Features Explained
+## Key Features Explained
 
 ### User Authentication
 - Custom user registration with secure password handling
@@ -177,7 +177,7 @@ python3 -c "from django.core.management.utils import get_random_secret_key; prin
 - Gradient text and backgrounds
 - Responsive navigation with mobile menu
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Run Django's built-in tests
@@ -190,7 +190,7 @@ python3 manage.py check
 python3 manage.py check --deploy
 ```
 
-## 🚀 Deployment
+## Deployment
 
 This application is ready to deploy on:
 - Railway
@@ -209,7 +209,7 @@ This application is ready to deploy on:
 - [ ] Create a superuser with `python manage.py createsuperuser`
 - [ ] Use a production database (PostgreSQL recommended)
 
-## 🤝 Contributing
+## Contributing
 
 Contributions, issues, and feature requests are welcome!
 
@@ -219,7 +219,7 @@ Contributions, issues, and feature requests are welcome!
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 🌟 Skills Demonstrated
+## Skills Demonstrated
 
 This project showcases:
 - ✅ Full-stack web development with Django
@@ -234,23 +234,23 @@ This project showcases:
 - ✅ Clean code organization
 - ✅ Git workflow and version control
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License.
 
-## 👨‍💻 Author
+## Author
 
 **Kokob Haile**
 
 - LinkedIn: [@kokob-haile](https://www.linkedin.com/in/kokob-haile)
 - GitHub: [@koki-star](https://github.com/koki-star)
 
-## 💡 About
+## About
 
 Built as a portfolio project to demonstrate modern web development skills and best practices. StudyTracker showcases end-to-end application development, from database design to user authentication to responsive UI implementation.
 
 ---
 
-**⭐ If you found this project helpful, please give it a star!**
+** If you found this project helpful, please give it a star!**
 
 _Built with ❤️ for learners everywhere_
