@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row mb-5 hero-section position-relative">
+    <div class="hero-blob"></div>
+    <div class="col-md-8 position-relative z-1 fade-up">
+        <h1 class="display-3 fw-bold mb-3 tracking-tight">Dashboard</h1>
+        <p class="text-muted lead mb-4" style="max-width: 600px;">Welcome back! Here is your learning progress overview.
+        </p>
+    </div>
+</div>
+
+<div class="row g-4 mb-4 fade-up">
+    <div class="col-md-3">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center py-4">
+                <div class="display-4 text-primary mb-2"><i class="bi bi-code-square"></i></div>
+                <h3 class="card-title fw-bold">{{ total_languages }}</h3>
+                <p class="card-text text-muted">Languages</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center py-4">
+                <div class="display-4 text-success mb-2"><i class="bi bi-journal-text"></i></div>
+                <h3 class="card-title fw-bold">{{ total_progress_entries }}</h3>
+                <p class="card-text text-muted">Study Sessions</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title fw-bold mb-3"><i class="bi bi-bar-chart-line me-2"></i>Time Spent (Minutes)</h5>
+                <canvas id="timeChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 fade-up">
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-header bg-transparent">
+                <h5 class="mb-0"><i class="bi bi-flag me-2 text-warning"></i>Upcoming Goals</h5>
+            </div>
+            <div class="card-body p-0">
+                <ul class="list-group list-group-flush">
+                    {% for goal in upcoming_goals %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
+                        <div>
+                            <span class="fw-medium">{{ goal.title }}</span>
+                            <small class="text-muted d-block">{{ goal.target_date }}</small>
+                        </div>
+                        <span class="badge text-bg-warning rounded-pill">In Progress</span>
+                    </li>
+                    {% empty %}
+                    <li class="list-group-item bg-transparent text-muted py-3">No upcoming goals.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-header bg-transparent">
+                <h5 class="mb-0"><i class="bi bi-trophy me-2 text-warning"></i>Recent Milestones</h5>
+            </div>
+            <div class="card-body p-0">
+                <ul class="list-group list-group-flush">
+                    {% for milestone in recent_milestones %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
+                        <div>
+                            <span class="fw-medium">{{ milestone.title }}</span>
+                            <span class="language-tag tag-{{ milestone.language.name|slugify }} mb-2">{{
+                                milestone.language.name }}</span>
+                        </div>
+                        <span class="badge bg-success rounded-pill"><i class="bi bi-check-lg"></i></span>
+                    </li>
+                    {% empty %}
+                    <li class="list-group-item bg-transparent text-muted py-3">No milestones yet.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const ctx = document.getElementById('timeChart').getContext('2d');
+
+    const getChartColors = (theme) => {
+        const isDark = theme === 'dark';
+        return {
+            text: isDark ? '#ced4da' : '#6c757d',
+            grid: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'
+        };
+    };
+
+    let timeChart = null;
+
+    const initChart = (theme) => {
+        if (timeChart) timeChart.destroy();
+
+        const colors = getChartColors(theme);
+
+        timeChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: {{ chart_labels| safe }},
+    datasets: [{
+        label: 'Minutes Spent',
+        data: {{ chart_data| safe }},
+        backgroundColor: 'rgba(13, 110, 253, 0.7)',
+        borderColor: 'rgba(13, 110, 253, 1)',
+        borderWidth: 1,
+        borderRadius: 4
+                }]
+            },
+    options: {
+        responsive: true,
+            scales: {
+            y: {
+                beginAtZero: true,
+                    grid: { color: colors.grid },
+                ticks: { color: colors.text }
+            },
+            x: {
+                grid: { display: false },
+                ticks: { color: colors.text }
+            }
+        },
+        plugins: {
+            legend: { display: false }
+        }
+    }
+        });
+    };
+
+    initChart(document.documentElement.getAttribute('data-bs-theme') || 'light');
+
+    window.addEventListener('themeChanged', (e) => {
+        initChart(e.detail.theme);
+    });
+</script>
+{% endblock %}

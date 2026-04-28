@@ -1,0 +1,232 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Header -->
+            <div class="text-center mb-5 fade-up">
+                <div class="badge bg-primary-subtle text-primary rounded-pill mb-3 px-3 py-2">About</div>
+                <h1 class="display-4 fw-bold mb-3">StudyTracker</h1>
+                <p class="lead text-secondary">
+                    A modern web application designed to help learners stay organized and motivated
+                    while mastering new skills.
+                </p>
+            </div>
+
+            <!-- What is StudyTracker -->
+            <div class="card mb-4 fade-up">
+                <div class="card-body p-4">
+                    <h3 class="fw-bold mb-3"><i class="bi bi-info-circle me-2"></i>What is StudyTracker?</h3>
+                    <p class="text-secondary mb-3">
+                        StudyTracker helps you track your daily progress, set goals, celebrate milestones,
+                        and keep all your learning resources in one central location. Whether you're learning
+                        programming, languages, or any other skill, StudyTracker gives you the tools to stay
+                        organized and motivated.
+                    </p>
+                    <p class="text-secondary mb-0">
+                        <strong>Built for learners who want to:</strong>
+                    </p>
+                    <ul class="text-secondary">
+                        <li>Track progress across multiple subjects</li>
+                        <li>Visualize improvement with charts and analytics</li>
+                        <li>Stay motivated with achievement tracking</li>
+                        <li>Organize learning resources efficiently</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="card mb-4 fade-up" style="animation-delay: 0.1s;">
+                <div class="card-body p-4">
+                    <h3 class="fw-bold mb-3"><i class="bi bi-code-square me-2"></i>Built With Modern Technologies</h3>
+                    <p class="text-secondary mb-3">
+                        This full-stack application demonstrates proficiency in contemporary web development:
+                    </p>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-filetype-py text-primary me-2" style="font-size: 1.5rem;"></i>
+                                <div>
+                                    <strong>Python & Django</strong>
+                                    <div class="small text-secondary">Backend framework</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-bootstrap text-primary me-2" style="font-size: 1.5rem;"></i>
+                                <div>
+                                    <strong>Bootstrap 5</strong>
+                                    <div class="small text-secondary">Responsive UI</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-bar-chart text-primary me-2" style="font-size: 1.5rem;"></i>
+                                <div>
+                                    <strong>Chart.js</strong>
+                                    <div class="small text-secondary">Data visualization</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-database text-primary me-2" style="font-size: 1.5rem;"></i>
+                                <div>
+                                    <strong>SQLite</strong>
+                                    <div class="small text-secondary">Database</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Features -->
+            <div class="card mb-4 fade-up" style="animation-delay: 0.2s;">
+                <div class="card-body p-4">
+                    <h3 class="fw-bold mb-3"><i class="bi bi-stars me-2"></i>Key Features</h3>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                                <div>
+                                    <strong>Progress Tracking</strong>
+                                    <div class="small text-secondary">Log daily study sessions with time and confidence
+                                        tracking</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                                <div>
+                                    <strong>Goal Management</strong>
+                                    <div class="small text-secondary">Set and track learning objectives with deadlines
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                                <div>
+                                    <strong>Dark Mode</strong>
+                                    <div class="small text-secondary">Beautiful themes for any lighting condition</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                                <div>
+                                    <strong>Responsive Design</strong>
+                                    <div class="small text-secondary">Works perfectly on all devices</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                                <div>
+                                    <strong>Data Visualization</strong>
+                                    <div class="small text-secondary">Interactive charts showing your progress</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                                <div>
+                                    <strong>Resource Library</strong>
+                                    <div class="small text-secondary">Organize all your learning materials</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Developer Info -->
+            <div class="card mb-4 fade-up" style="animation-delay: 0.3s;">
+                <div class="card-body p-4">
+                    <h3 class="fw-bold mb-3"><i class="bi bi-person-badge me-2"></i>About the Developer</h3>
+                    <p class="text-secondary mb-3">
+                        Built as a portfolio project to demonstrate full-stack web development skills.
+                        From database design to user authentication to responsive UI, StudyTracker showcases
+                        end-to-end application development with modern technologies and best practices.
+                    </p>
+                    <p class="text-secondary mb-2">
+                        <strong>Skills Demonstrated:</strong>
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="text-secondary">
+                                <li>Django MVT Architecture</li>
+                                <li>ORM & Database Design</li>
+                                <li>User Authentication</li>
+                                <li>Responsive UI/UX</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="text-secondary">
+                                <li>Data Visualization</li>
+                                <li>Theme System</li>
+                                <li>Git Workflow</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div class="card fade-up" style="animation-delay: 0.4s;">
+                <div class="card-body p-4">
+                    <h3 class="fw-bold mb-3"><i class="bi bi-link-45deg me-2"></i>Links & Resources</h3>
+                    <div class="row g-2">
+                        <div class="col-md-6">
+                            <a href="https://github.com/koki-star/studytracker" target="_blank"
+                                class="btn btn-outline-primary w-100">
+                                <i class="bi bi-github me-2"></i>View Source Code
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="https://www.linkedin.com/in/kokob-haile" target="_blank"
+                                class="btn btn-outline-primary w-100">
+                                <i class="bi bi-linkedin me-2"></i>LinkedIn Profile
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="{% url 'dashboard' %}" class="btn btn-outline-secondary w-100">
+                                <i class="bi bi-speedometer2 me-2"></i>Go to Dashboard
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="{% url 'landing' %}" class="btn btn-outline-secondary w-100">
+                                <i class="bi bi-house me-2"></i>Back to Home
+                            </a>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <small class="text-secondary">
+                            <i class="bi bi-envelope me-1"></i>
+                            Questions or feedback? Feel free to reach out!
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Note -->
+            <div class="text-center mt-5 text-secondary small">
+                <p class="mb-0">
+                    <i class="bi bi-heart-fill text-danger me-1"></i>
+                    Built with passion for learning and growth
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

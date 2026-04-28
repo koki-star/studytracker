@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row align-items-center justify-content-center position-relative"
+    style="min-height: 100vh; padding-top: 120px;">
+
+    <div class="col-md-5">
+        <div class="card shadow-lg border-0 login-card">
+            <div class="card-body p-5">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold display-6 tracking-tight mb-2">Welcome Back</h2>
+                    <p class="text-secondary">Please enter your details to sign in.</p>
+                </div>
+
+                <form method="post" class="needs-validation" novalidate>
+                    {% csrf_token %}
+
+                    {% if form.errors %}
+                    <div class="alert alert-danger mb-4 rounded-3 border-0 bg-danger-subtle text-danger">
+                        <i class="bi bi-exclamation-circle me-2"></i> Invalid username or password.
+                    </div>
+                    {% endif %}
+
+                    <div class="mb-4">
+                        {{ form.username.label_tag }}
+                        {{ form.username }}
+                    </div>
+
+                    <div class="mb-4">
+                        {{ form.password.label_tag }}
+                        {{ form.password }}
+                    </div>
+
+                    <div class="mb-4 text-end">
+                        <a href="{% url 'password_reset' %}" class="text-decoration-none text-primary fw-semibold small">
+                            Forgot password?
+                        </a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 py-3 rounded-3 fw-bold shadow-sm">
+                        Sign In <i class="bi bi-arrow-right ms-2"></i>
+                    </button>
+                </form>
+
+                <div class="text-center mt-4">
+                    <p class="text-secondary mb-0">Don't have an account?
+                        <a href="{% url 'signup' %}" class="text-decoration-none fw-bold text-primary">Create
+                            account</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Remove card hover effect for login form */
+    .login-card {
+        transition: none !important;
+    }
+
+    .login-card:hover {
+        transform: none !important;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05) !important;
+    }
+
+    /* Form label styling */
+    label {
+        display: block;
+        font-weight: 600;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        color: var(--text-secondary);
+        letter-spacing: 0.5px;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Form input styling - no movement, just color change */
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        font-size: 1.125rem;
+        background-color: var(--bg-secondary);
+        border: 2px solid transparent;
+        border-radius: 0.5rem;
+        color: var(--text-main);
+        transition: all 0.2s ease;
+    }
+
+    input[type="text"]:hover,
+    input[type="password"]:hover {
+        background-color: var(--bg-tertiary);
+        border-color: var(--border-color);
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+        outline: none;
+        background-color: var(--bg-tertiary);
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.1);
+    }
+
+    [data-bs-theme="dark"] input[type="text"],
+    [data-bs-theme="dark"] input[type="password"] {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    [data-bs-theme="dark"] input[type="text"]:hover,
+    [data-bs-theme="dark"] input[type="password"]:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+</style>
+{% endblock %}

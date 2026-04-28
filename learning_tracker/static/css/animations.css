@@ -1,0 +1,364 @@
+/* ============================================
+   SCROLL-DRIVEN ANIMATIONS
+   Modern CSS scroll-timeline animations
+   ============================================ */
+
+/* ============================================
+   SCROLL PROGRESS INDICATOR
+   ============================================ */
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--bg-secondary);
+    z-index: 9999;
+    transform-origin: 0% 50%;
+}
+
+.scroll-progress::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--gradient-primary);
+    transform-origin: 0% 50%;
+
+    /* Scroll-driven animation */
+    animation: scroll-progress linear;
+    animation-timeline: scroll(root);
+}
+
+@keyframes scroll-progress {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* ============================================
+   FADE-UP REVEAL ANIMATIONS
+   ============================================ */
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+
+    /* Scroll-triggered animation */
+    animation: fade-up-reveal linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+@keyframes fade-up-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger effect for multiple items */
+.fade-up:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+.fade-up:nth-child(2) {
+    animation-delay: 100ms;
+}
+
+.fade-up:nth-child(3) {
+    animation-delay: 200ms;
+}
+
+.fade-up:nth-child(4) {
+    animation-delay: 300ms;
+}
+
+.fade-up:nth-child(5) {
+    animation-delay: 400ms;
+}
+
+/* ============================================
+   PARALLAX SCROLLING
+   ============================================ */
+
+.parallax-slow {
+    /* Moves slower than scroll for depth effect */
+    animation: parallax-slow linear;
+    animation-timeline: scroll(root);
+}
+
+@keyframes parallax-slow {
+    to {
+        transform: translateY(150px);
+    }
+}
+
+.parallax-fast {
+    /* Moves faster than scroll for dynamic effect */
+    animation: parallax-fast linear;
+    animation-timeline: scroll(root);
+}
+
+@keyframes parallax-fast {
+    to {
+        transform: translateY(-100px);
+    }
+}
+
+/* ============================================
+   SCALE ON SCROLL
+   ============================================ */
+
+.scale-in {
+    transform: scale(0.85);
+    opacity: 0;
+
+    animation: scale-in-reveal linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+@keyframes scale-in-reveal {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   ROTATE ON SCROLL
+   ============================================ */
+
+.rotate-in {
+    transform: rotate(-5deg);
+    opacity: 0;
+
+    animation: rotate-in-reveal linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+@keyframes rotate-in-reveal {
+    from {
+        transform: rotate(-5deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: rotate(0);
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   SLIDE IN FROM SIDES
+   ============================================ */
+
+.slide-in-left {
+    transform: translateX(-60px);
+    opacity: 0;
+
+    animation: slide-in-left-reveal linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+@keyframes slide-in-left-reveal {
+    from {
+        transform: translateX(-60px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-right {
+    transform: translateX(60px);
+    opacity: 0;
+
+    animation: slide-in-right-reveal linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+@keyframes slide-in-right-reveal {
+    from {
+        transform: translateX(60px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   BLUR TO FOCUS
+   ============================================ */
+
+.blur-in {
+    filter: blur(10px);
+    opacity: 0;
+
+    animation: blur-in-reveal linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+@keyframes blur-in-reveal {
+    from {
+        filter: blur(10px);
+        opacity: 0;
+    }
+
+    to {
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   COUNTER ANIMATIONS
+   ============================================ */
+
+/* Animated number counter triggered on scroll */
+@property --num {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
+}
+
+.counter {
+    animation: counter-up ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+    counter-reset: num var(--num);
+}
+
+.counter::after {
+    content: counter(num);
+}
+
+@keyframes counter-up {
+    from {
+        --num: 0;
+    }
+
+    to {
+        --num: 100;
+    }
+}
+
+/* ============================================
+   STICKY REVEAL
+   Elements that stick and fade as you scroll
+   ============================================ */
+
+.sticky-fade {
+    position: sticky;
+    top: 20vh;
+    opacity: 0;
+
+    animation: sticky-fade-reveal linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
+}
+
+@keyframes sticky-fade-reveal {
+    entry 0% {
+        opacity: 0;
+    }
+
+    entry 20% {
+        opacity: 1;
+    }
+
+    exit 80% {
+        opacity: 1;
+    }
+
+    exit 100% {
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   FALLBACK FOR BROWSERS WITHOUT SUPPORT
+   ============================================ */
+
+/* Simple fallback using viewport intersection */
+@supports not (animation-timeline: scroll()) {
+
+    .fade-up,
+    .scale-in,
+    .rotate-in,
+    .slide-in-left,
+    .slide-in-right,
+    .blur-in {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
+
+    /* JS will handle these instead */
+    .fade-up.animated,
+    .scale-in.animated,
+    .slide-in-left.animated,
+    .slide-in-right.animated {
+        animation: fade-up-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATION
+   ============================================ */
+
+/* Use will-change sparingly - only on actively animating elements */
+.fade-up,
+.scale-in,
+.parallax-slow,
+.parallax-fast {
+    will-change: transform, opacity;
+}
+
+/* Remove will-change after animation completes to free resources */
+@media (prefers-reduced-motion: reduce) {
+
+    .fade-up,
+    .scale-in,
+    .rotate-in,
+    .slide-in-left,
+    .slide-in-right,
+    .parallax-slow,
+    .parallax-fast,
+    .blur-in,
+    .sticky-fade {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+    }
+}

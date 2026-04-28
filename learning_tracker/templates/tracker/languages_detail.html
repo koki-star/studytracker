@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mb-4">
+    <a href="{% url 'language_list' %}" class="btn btn-secondary">&larr; Back to Languages</a>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h1 class="card-title">{{ language.name }}</h1>
+        <h6 class="card-subtitle mb-2 text-muted">{{ language.difficulty_level }} - Started: {{ language.date_started }}
+        </h6>
+        <p class="card-text">{{ language.description }}</p>
+    </div>
+</div>
+
+<h3>Topics</h3>
+<ul class="list-group mb-4">
+    {% for topic in language.topics.all %}
+    <li class="list-group-item">{{ topic.name }} - {{ topic.description }}</li>
+    {% empty %}
+    <li class="list-group-item">No topics added yet.</li>
+    {% endfor %}
+</ul>
+
+<h3>Resources</h3>
+<ul class="list-group mb-4">
+    {% for resource in language.resources.all %}
+    <li class="list-group-item">
+        <a href="{{ resource.link }}" target="_blank">{{ resource.title }}</a> ({{ resource.resource_type }})
+    </li>
+    {% empty %}
+    <li class="list-group-item">No resources added yet.</li>
+    {% endfor %}
+</ul>
+
+<h3>Milestones</h3>
+<ul class="list-group mb-4">
+    {% for milestone in language.milestones.all %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span>{{ milestone.title }}</span>
+        {% if milestone.is_completed %}
+        <span class="badge bg-success">Completed</span>
+        {% else %}
+        <span class="badge bg-secondary">Pending</span>
+        {% endif %}
+    </li>
+    {% empty %}
+    <li class="list-group-item">No milestones added yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
