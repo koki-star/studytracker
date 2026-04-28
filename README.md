@@ -32,28 +32,9 @@ A personal learning tracker I built with Django. You can log daily study session
 - PostgreSQL (production) / SQLite (development)
 - WhiteNoise for static files
 
-## Running Locally
+## Local Setup
 
-```bash
-git clone https://github.com/koki-star/studytracker.git
-cd studytracker
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-Copy the example environment file and fill in your values:
-```bash
-cp .env.example .env
-```
-
-Then run:
-```bash
-python3 manage.py migrate
-python3 manage.py runserver
-```
-
-Visit `http://127.0.0.1:8000`
+Clone the repo, copy `.env.example` to `.env`, install with `pip install -r requirements.txt`, then run `python3 manage.py migrate && python3 manage.py runserver`.
 
 ## Skills Demonstrated
 
