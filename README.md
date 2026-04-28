@@ -53,7 +53,5 @@ MIT License
 
 ## Author
 
-**Kokob Haile**
-
 - GitHub: [@koki-star](https://github.com/koki-star)
 - LinkedIn: [@kokob-haile](https://www.linkedin.com/in/kokob-haile)
